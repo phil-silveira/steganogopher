@@ -2,7 +2,6 @@ package common
 
 import (
 	"fmt"
-	"log"
 	"strings"
 )
 
@@ -10,17 +9,15 @@ const EOFMarker = "%%END%%"
 
 func AssertNoError(err error) {
 	if err != nil {
-		log.Fatalln(err)
-
 		panic(err)
 	}
 }
 
-func AssertNoEmpty(text string, message string) {
+func AssertNotEmpty(text string, message string) {
 	if strings.Trim(text, " ") == "" {
 		fmt.Println(message)
 
-		panic("Eunexpected error")
+		panic("Unexpected empty field error")
 	}
 }
 

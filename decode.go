@@ -11,7 +11,7 @@ import (
 // Decode is used to extract/decode a hidden text message from a .PNG image
 func Decode(inputPath string) string {
 	inputPath = strings.Trim(inputPath, " ")
-	common.AssertNoEmpty(inputPath, "-i=<PATH-TO-IMAGE> should be not empty")
+	common.AssertNotEmpty(inputPath, "-i=<PATH-TO-IMAGE> should be not empty")
 
 	data := extractHiddenDataFromFile(inputPath)
 
@@ -34,14 +34,8 @@ func extractHiddenDataFromFile(path string) []byte {
 	current := 0
 
 	data := []byte{}
-	for y := 0; y < img.Rect.Max.Y; y++ {
-		if current >= maxBits {
-			break
-		}
-		for x := 0; x < img.Rect.Max.X; x++ {
-			if current >= maxBits {
-				break
-			}
+	for y := 0; y < img.Rect.Max.Y && current < maxBits; y++ {
+		for x := 0; x < img.Rect.Max.X && current < maxBits; x++ {
 			r, g, b, _ := img.At(x, y).RGBA()
 
 			for c := 0; c < 3 && current < maxBits && !checkEOFMarker(data); c++ {

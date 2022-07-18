@@ -13,11 +13,11 @@ import (
 // Encode is used to encode/hide a text message into a .PNG image
 func Encode(text string, inputPath string, outputPath string) {
 	text = strings.Trim(text, " ")
-	common.AssertNoEmpty(text, "-m=<text> should be not empty")
+	common.AssertNotEmpty(text, "-m=<text> should be not empty")
 	text += common.EOFMarker
 
 	inputPath = strings.Trim(inputPath, " ")
-	common.AssertNoEmpty(inputPath, "-i=<PATH-TO-IMAGE> should be not empty")
+	common.AssertNotEmpty(inputPath, "-i=<PATH-TO-IMAGE> should be not empty")
 
 	outputPath = strings.Trim(outputPath, " ")
 	if outputPath == "" {
