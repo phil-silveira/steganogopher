@@ -6,12 +6,12 @@ SteganoGopher is a steganography CLI written in pure go make for Gophers.
 You can use this tool to encode/decode text messages into/from .PNG files.
 
 ## Demostration
+
 | Original | Edited Image |
-| -------- | -------------|
-|![original image](examples/avatar.png)| ![edited image](examples/avatar_out.png)|
+| -------- | ------------ |
+|![original image](examples/le-petit-prince.png)| ![edited image](examples/le-petit-prince.out.png)|
 
-The second image contains a hidden message ;-)
-
+The second image contains the message `"It is the time you have wasted for your rose that makes your rose so important."`
 
 
 ### Encode message into a file
