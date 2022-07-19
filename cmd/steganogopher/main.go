@@ -4,26 +4,33 @@ import (
 	"flag"
 	"fmt"
 	st "steganogopher"
+	"strings"
 )
 
 func main() {
-	var flagEncode, flagDecode bool
-	var inputPath, outputPath, message string
+	var encodeTarget, decodeTarget string
+	var outputPath, message string
 
-	flag.BoolVar(&flagDecode, "d", false, "decode data from a .PNG file")
-	flag.BoolVar(&flagEncode, "e", false, "encode data into a .PNG file")
-	flag.StringVar(&inputPath, "i", "", "path to the input .PNG file")
+	flag.StringVar(&decodeTarget, "d", "", "decode data from <path/to/file.png>")
+	flag.StringVar(&encodeTarget, "e", "", "encode data into <path/to/file.png>")
 	flag.StringVar(&outputPath, "o", "", "path to the output .PNG file. Default value is <INPUT>_X.PNG")
 	flag.StringVar(&message, "m", "", "message to be encoded")
 	flag.Parse()
 
-	fmt.Printf("==| SteganoGophy |==\n\n")
+	decodeTarget = strings.Trim(decodeTarget, " ")
+	encodeTarget = strings.Trim(encodeTarget, " ")
+	outputPath = strings.Trim(outputPath, " ")
+	message = strings.Trim(message, " ")
 
-	if flagEncode {
-		st.Encode(message, inputPath, outputPath)
-	} else if flagDecode {
-		msg := st.Decode(inputPath)
+	if encodeTarget != "" {
+		st.Encode(message, encodeTarget, outputPath)
+		return
+	}
 
-		fmt.Printf("Message: \"%s\"\n", msg)
+	if decodeTarget != "" {
+		msg := st.Decode(decodeTarget)
+
+		fmt.Printf("{\"message\": \"%s\"}\n", msg)
+		return
 	}
 }

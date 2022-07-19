@@ -42,7 +42,7 @@ func hideDataIntoFile(data []byte, inputPath string, outputPath string) {
 	imgData, err := png.Decode(fIn)
 	common.AssertNoError(err)
 
-	img := imgData.(*image.RGBA)
+	img := imgData.(*image.NRGBA)
 
 	count := len(data)
 	current := 0
