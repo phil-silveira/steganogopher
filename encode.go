@@ -21,7 +21,7 @@ func Encode(text string, inputPath string, outputPath string) {
 
 	outputPath = strings.Trim(outputPath, " ")
 	if outputPath == "" {
-		outputPath = inputPath[:len(inputPath)-4] + "_X" + inputPath[len(inputPath)-4:]
+		outputPath = inputPath[:len(inputPath)-4] + ".out" + inputPath[len(inputPath)-4:]
 		fmt.Printf("***Warning: -o=<OUTPUT-PATH> is empty, default value is '%s'.\n", outputPath)
 	}
 
