@@ -9,7 +9,7 @@ You can use this tool to encode/decode text messages into/from .PNG files.
 
 | Original | Edited Image |
 | -------- | ------------ |
-|![original image](examples/le-petit-prince.png)| ![edited image](examples/le-petit-prince.out.png)|
+|<img src="examples/le-petit-prince.png" width="150" height="200" /> | <img src="examples/le-petit-prince.out.png" width="150" height="200" /> |
 
 The second image contains the message `"It is the time you have wasted for your rose that makes your rose so important."`
 
