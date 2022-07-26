@@ -1,0 +1,20 @@
+name: Code Review
+
+on: [push, pull_request]
+
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v3
+
+      - name: Set up Go 1.18.4
+        uses: action/setup-go@v3
+        with:
+          go-version: 1.18.4
+
+      - name: Build .exe file
+        run: go build -v ./...
+
+      - name: Run unit tests
+        run: go test -v ./...
