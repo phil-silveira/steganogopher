@@ -1,8 +1,11 @@
 # SteganoGopher 
 
+![Go](https://img.shields.io/badge/Golang-gray?logo=go&labelColor=EEE)
 [![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+![Code Review](https://github.com/phil-silveira/steganogopher/actions/workflows/code-review.yml/badge.svg)
 
-SteganoGopher is a steganography CLI written in pure go make for Gophers.
+
+SteganoGopher is a steganography CLI written in pure go made for Gophers.
 You can use this tool to encode/decode text messages into/from .PNG files.
 
 ## Demostration
@@ -19,7 +22,8 @@ The second image contains the message `"It is the time you have wasted for your 
 steganogopher -e screenshot.png -m "type your message right here"
 ```
 encode should create a file `screenshot.out.png`
-### Decode a file
+
+### Decode hidden messge from a file
 ```
 steganogopher -d screenshot.out.png 
 ```
