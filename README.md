@@ -1,4 +1,6 @@
-# SteganoGopher 
+# SteganoGopher
+
+ <img src="examples/gopher-mustache.png" width="150" align="right"/>
 
 ![Go](https://img.shields.io/badge/Golang-gray?logo=go&labelColor=EEE)
 [![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://img.shields.io/badge/license-MIT-brightgreen.svg)
