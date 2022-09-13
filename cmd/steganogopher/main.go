@@ -3,8 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	st "steganogopher"
 	"strings"
+
+	st "steganogopher"
 )
 
 var commands = map[string]string{

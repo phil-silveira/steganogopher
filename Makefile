@@ -1,8 +1,5 @@
 install:
-	make build_exe && \
-	cd ./build
-	go install
-	cd .. 
+	go install ./cmd/steganogopher
 
 build_exe:
 	go build  -o ./build/ ./cmd/steganogopher
