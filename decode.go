@@ -5,6 +5,7 @@ import (
 	png "image/png"
 	"os"
 	"steganogopher/internal/common"
+
 	"strings"
 )
 
