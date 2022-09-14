@@ -10,6 +10,13 @@
 SteganoGopher is a steganography CLI written in pure go made for Gophers.
 You can use this tool to encode/decode text messages into/from .PNG files.
 
+## Installation
+
+To proberly install this tool, you may clone this repository and run the command below:
+```
+    make install
+```
+
 ## Demostration
 
 | Original | Edited Image |
