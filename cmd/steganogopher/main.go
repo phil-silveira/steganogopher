@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"steganogopher/internal/common"
 	"strings"
 
 	st "steganogopher"
@@ -38,7 +39,11 @@ func main() {
 	if decodeTarget != "" {
 		msg := st.Decode(decodeTarget)
 
-		fmt.Printf("{\"message\": \"%s\"}\n", msg)
+		if len(outputPath) == 0 {
+			outputPath = "decoded-message.txt"
+		}
+
+		common.WriteStringIntoFile(outputPath, msg)
 		return
 	}
 

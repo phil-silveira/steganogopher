@@ -36,4 +36,4 @@ encode should create a file `screenshot.out.png`
 ```
 steganogopher -d screenshot.out.png 
 ```
-decode result should be something like `{"message": "type your message right here"}`
+the message decoded should be stored inside file `decoded-message.txt`
