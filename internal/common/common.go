@@ -2,6 +2,8 @@ package common
 
 import (
 	"fmt"
+	"log"
+	"os"
 	"strings"
 )
 
@@ -48,4 +50,26 @@ func ConvertBitArray2Text(data []byte) string {
 		bytes = append(bytes, b)
 	}
 	return string(bytes)
+}
+
+func WriteStringIntoFile(filename string, text string) error {
+	fd, err := os.Create(filename)
+
+	if err != nil {
+		log.Fatal(err)
+
+		return err
+	}
+
+	defer fd.Close()
+
+	_, err = fd.WriteString(text)
+
+	if err != nil {
+		log.Fatal(err)
+
+		return err
+	}
+
+	return nil
 }
