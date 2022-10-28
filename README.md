@@ -28,12 +28,12 @@ The second image contains the message `"It is the time you have wasted for your 
 
 ### Encode message into a file
 ```
-steganogopher -e screenshot.png -m "type your message right here"
+steganogopher encode screenshot.png -m "type your message right here"
 ```
 encode should create a file `screenshot.out.png`
 
 ### Decode hidden messge from a file
 ```
-steganogopher -d screenshot.out.png 
+steganogopher decode screenshot.out.png 
 ```
 the message decoded should be stored inside file `decoded-message.txt`
