@@ -1,4 +1,4 @@
-package steganogopher
+package encode
 
 import (
 	"fmt"

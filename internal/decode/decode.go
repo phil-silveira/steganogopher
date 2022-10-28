@@ -1,4 +1,4 @@
-package steganogopher
+package decode
 
 import (
 	"image"

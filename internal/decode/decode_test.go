@@ -1,4 +1,4 @@
-package steganogopher
+package decode
 
 import (
 	"testing"
@@ -8,7 +8,7 @@ import (
 
 func TestDecodeTextFromPNG(t *testing.T) {
 	assert := assert.New(t)
-	msg := Decode("./examples/le-petit-prince.test.png")
+	msg := Decode("../../examples/le-petit-prince.test.png")
 
 	assert.Equal("hidden message XD", msg)
 
