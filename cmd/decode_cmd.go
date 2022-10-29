@@ -11,8 +11,9 @@ import (
 var decodeCmd = &cobra.Command{
 	Use:   "decode",
 	Short: "Decode data from <path/to/file.png>.",
-	Long:  "Example: decode photo.png  -o decoded_message.txt",
-	Args:  cobra.MinimumNArgs(1),
+	Long: `Decode data from <path/to/file.png>. 
+		Example: decode photo.png  -o decoded_message.txt`,
+	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		var input = args[0]
 		var output string

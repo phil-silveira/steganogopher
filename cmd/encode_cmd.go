@@ -10,8 +10,9 @@ import (
 var encodeCmd = &cobra.Command{
 	Use:   "encode",
 	Short: "Encode data into <path/to/file.png>.",
-	Long:  "Example: encode photo.png -m 'secret message HERE' -o generetad_image.png",
-	Args:  cobra.MinimumNArgs(1),
+	Long: `Encode data into <path/to/file.png>.
+		Example: encode photo.png -m 'secret message HERE' -o generetad_image.png`,
+	Args: cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		var input = args[0]
 		var message = cmd.Flag("message").Value.String()
