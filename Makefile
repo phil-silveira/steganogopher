@@ -1,8 +1,8 @@
 install:
-	go install ./cmd/steganogopher
+	go install
 
-build_exe:
-	go build  -o ./build/ ./cmd/steganogopher
+test:
+	go test ./...
 
 coverage:
 	go test -cover -coverprofile=coverage.out ./... && \

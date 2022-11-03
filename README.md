@@ -25,15 +25,20 @@ To proberly install this tool, you may clone this repository and run the command
 
 The second image contains the message `"It is the time you have wasted for your rose that makes your rose so important."`
 
-
 ### Encode message into a file
 ```
-steganogopher -e screenshot.png -m "type your message right here"
+steganogopher encode screenshot.png -m "type your message right here"
 ```
 encode should create a file `screenshot.out.png`
 
 ### Decode hidden messge from a file
 ```
-steganogopher -d screenshot.out.png 
+steganogopher decode screenshot.out.png 
 ```
 the message decoded should be stored inside file `decoded-message.txt`
+
+### Get image infos
+```
+steganogopher info screenshot.png
+```
+should display info about the image `screenshot.out.png`
