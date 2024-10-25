@@ -7,23 +7,22 @@
 ![Code Review](https://github.com/phil-silveira/steganogopher/actions/workflows/code-review.yml/badge.svg)
 
 
-SteganoGopher is a steganography CLI written in pure go made for Gophers.
+**SteganoGopher** is a steganography CLI written in pure go made for Gophers.
 You can use this tool to encode/decode text messages into/from .PNG files.
 
 ## Installation
 
-To proberly install this tool, you may clone this repository and run the command below:
+To properly install this tool, you need to clone this repository and run the command below:
 ```
     make install
 ```
 
 ## Demostration
 
-| Original | Edited Image |
+| Original | Encoded |
 | -------- | ------------ |
 |<img src="examples/le-petit-prince.png" width="150" height="200" /> | <img src="examples/le-petit-prince.out.png" width="150" height="200" /> |
-
-The second image contains the message `"It is the time you have wasted for your rose that makes your rose so important."`
+| no encoded data | encoded data: `"It is the time you have wasted for your rose that makes your rose so important."` |
 
 ### Encode message into a file
 ```
