@@ -1,9 +1,9 @@
 package cmd
 
 import (
+	"fmt"
 	"steganogopher/internal/common"
 	"steganogopher/internal/decode"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -16,15 +16,22 @@ var decodeCmd = &cobra.Command{
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		var input = args[0]
-		var output string
 
-		if output = cmd.Flag("output").Value.String(); len(strings.Trim(output, " ")) == 0 {
-			output = "out.png"
-		}
 		message := decode.Decode(input)
 
-		common.WriteStringIntoFile(output, message)
+		outputFilename := cmd.Flag("output").Value.String()
+
+		hasNoOutputFile := len(outputFilename) == 0
+		if hasNoOutputFile {
+			printDecodedMessage(message)
+			return
+		}
+		common.WriteStringIntoFile(outputFilename, message)
 	},
+}
+
+func printDecodedMessage(message string) {
+	fmt.Printf(`(decoded): %s`, message)
 }
 
 func init() {
